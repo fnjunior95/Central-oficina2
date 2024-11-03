@@ -82,6 +82,7 @@ Sistema de gerenciamento de presença dos alunos do projeto de extensão ELLP (E
 
 ## 2. Arquitetura em Alto Nível do Sistema
 Clean Architecture foi a arquitetura escolhida para ser utilizada no backend.
+
 A Clean Architecture, proposta por Robert C. Martin (também conhecido como Uncle Bob), é uma abordagem de design de software que promove a separação de responsabilidades e a independência dos componentes do sistema. Seu objetivo principal é criar sistemas que sejam fáceis de entender, testar, manter e evoluir ao longo do tempo.
 
 A Clean Architecture é frequentemente representada como uma série de camadas concêntricas, onde cada camada tem uma responsabilidade específica e depende apenas das camadas mais internas
