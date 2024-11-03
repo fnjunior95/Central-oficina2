@@ -1,9 +1,6 @@
-version: '3.8'
-
 services:
   mysql:
-    build:
-      context: ./mysql
+    image: mysql:latest
     container_name: my_mysql
     environment:
       MYSQL_ROOT_PASSWORD: admin
@@ -14,11 +11,12 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./Db/backup_ellp.sql:/docker-entrypoint-initdb.d/backup_ellp.sql
     restart: always
 
   springboot-app:
     build:
-      context: ./Back  # Certifique-se de que o Dockerfile do Spring Boot esteja nesse diretório
+      context: ../Back  # Certifique-se de que o Dockerfile do Spring Boot esteja nesse diretório
       dockerfile: Dockerfile
     container_name: springboot_app
     environment:
@@ -32,7 +30,7 @@ services:
 
   react-app:
     build:
-      context: ./front-end  # Certifique-se de que o Dockerfile do React esteja nesse diretório
+      context: ../front-end  # Certifique-se de que o Dockerfile do React esteja nesse diretório
       dockerfile: Dockerfile.react
     container_name: react_app
     ports:
@@ -41,4 +39,4 @@ services:
       - springboot-app
 
 volumes:
-  mysql_data:
+  mysql_data: {}
