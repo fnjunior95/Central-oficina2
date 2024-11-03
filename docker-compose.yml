@@ -16,7 +16,7 @@ services:
 
   springboot-app:
     build:
-      context: ../Back  # Certifique-se de que o Dockerfile do Spring Boot esteja nesse diretório
+      context: ./Back  
       dockerfile: Dockerfile
     container_name: springboot_app
     environment:
@@ -30,7 +30,7 @@ services:
 
   react-app:
     build:
-      context: ../front-end  # Certifique-se de que o Dockerfile do React esteja nesse diretório
+      context: ./front-end  
       dockerfile: Dockerfile.react
     container_name: react_app
     ports:
