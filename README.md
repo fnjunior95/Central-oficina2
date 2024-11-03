@@ -128,6 +128,6 @@ Pensando em um sistema que o usuario tera login e senha para realizar o visto po
 ### Principais Tecnologias
 - Linguagens de Programação: [Java, JavaScript]
 - Frameworks: [React Native, Spring Boot]
-- Banco de Dados: [Nome do Banco de Dados]
+- Banco de Dados: [MySQL, JPA]
 - Outras Ferramentas: [Docker, GitHub Actions]
 
