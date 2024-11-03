@@ -1,13 +1,18 @@
-# Dockerfile
-
-# Usar a imagem base do Java
+# Usar a imagem base do OpenJDK
 FROM openjdk:11-jdk-slim
 
-# Definir o diretório de trabalho
+# Diretório de trabalho
 WORKDIR /app
 
-# Copiar o JAR da aplicação para o container
-COPY target/myapp.jar myapp.jar
+# Clonar o repositório do GitHub
+RUN apt-get update && apt-get install -y git \
+    && git clone https://github.com/Eduardogdfrt/Oficina2.git \
+    && cd Oficina2/Back \
+    && ./mvnw package -DskipTests
 
-# Executar a aplicação
-ENTRYPOINT ["java", "-jar", "myapp.jar"]
+# Copiar o JAR gerado para o contêiner
+COPY Oficina2/Back/target/*.jar app.jar
+
+# Comando para executar a aplicação
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+ 
