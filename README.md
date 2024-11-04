@@ -126,8 +126,8 @@ Pensando em um sistema que o usuario tera login e senha para realizar o visto po
 
 ## 4. Tecnologias Utilizadas
 ### Principais Tecnologias
-- Linguagens de Programação: [Java, JavaScript]
+- Linguagens de Programação: [Java ou .NET(DE PREFERENCIA), JavaScript]
 - Frameworks: [React Native, Spring Boot]
-- Banco de Dados: [MySQL, JPA]
+- Banco de Dados: [MySQL, JPA(Ou Entity)]
 - Outras Ferramentas: [Docker, GitHub Actions]
 
