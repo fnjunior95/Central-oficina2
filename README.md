@@ -9,18 +9,16 @@ Sistema de gerenciamento de presença dos alunos do projeto de extensão ELLP (E
 
 | ID | FUNCIONALIDADE |
 | ----------- | ----------- |
-| RF01 | O sistema deve permitir o cadastro de novos usuários. |
-| RF02 | O sistema deve permitir que usuários cadastrados façam login. |
-| RF03 | O sistema deve permitir que o professor, durante cada aula, gere um QR code de validação único. Esse QR code servirá para autenticar a presença dos alunos, garantindo que apenas os alunos presentes na sala de aula possam registrar a presença. Cada QR code terá um tempo de validade específico, após o qual ele expira, impedindo que o aluno registre a presença fora do período da aula. |
-| RF04 | O sistema deve permitir que os professores cadastrem novas turmas. |
-| RF05 | O sistema deve permitir que os professores criem oficinas de ensino, nas quais poderão agrupar várias turmas para facilitar o gerenciamento e o acompanhamento das atividades. |
-| RF06 | O sistema deve permitir que o professor registre a presença dos alunos em cada aula de uma oficina específica. A cada aula, o professor poderá confirmar a participação de cada aluno, garantindo que o registro seja associado à turma e à oficina correspondente. |
-| RF07 | O sistema deve permitir que os alunos registrem sua presença em aula por meio de um QR code de validação gerado pelo professor. Esse QR code será escaneado pelos alunos para confirmar sua presença, vinculando o registro à aula específica e garantindo que o aluno esteja fisicamente presente no momento do registro. |
-| RF08 | O sistema deve permitir que o professor visualize a lista completa de alunos cadastrados em cada turma e oficina, facilitando o acompanhamento e o gerenciamento dos participantes.|
+| RF01 | O sistema deve permitir o cadastro de alunos voluntários (professores no projeto). |
+| RF02 | O sistema deve permitir que alunos voluntários façam login. |
+| RF03 | O sistema deve permitir o cadastro de workshops. |
+| RF04 | O sistema deve permitir a inclusão de alunos voluntários como instrutores nos workshops. |
+| RF05 | O sistema deve permitir o registro de presença dos alunos participantes em workshops usando QR Code. |
+| RF06 | O sistema deve permitir a consulta de relatórios de workshops com alunos voluntários e participantes. |
 
 ## Cenários de uso e critérios de aceitação
 
-### RF01: Cadastro de Usuários
+### RF01: Cadastro de Alunos Voluntários (Professores)
 **Cenário de uso:** Um usuário acessa a página de cadastro, preenche seus dados (nome, email, senha, etc.) e finaliza o cadastro. O sistema deve criar a conta do usuário e exibir uma mensagem de confirmação.
 
 **Critérios de aceitação:** 
@@ -28,57 +26,43 @@ Sistema de gerenciamento de presença dos alunos do projeto de extensão ELLP (E
 - Se os dados estiverem corretos e completos, o cadastro deve ser bem-sucedido e o usuário deve ver uma mensagem de confirmação.
 - Caso algum campo esteja incorreto ou incompleto, o sistema deve exibir mensagens de erro apropriadas.
 
-### RF02: Login de Usuários 
-**Cenário de uso:** Um usuário já cadastrado acessa a página de login, insere seu email e senha, e tenta entrar no sistema.
+### RF02: Login de Alunos Voluntários
+**Cenário de uso:** Um aluno voluntário já cadastrado acessa a página de login, insere seu email e senha, e tenta entrar no sistema.
 
 **Critérios de aceitação:** 
 - Se as credenciais forem corretas, o usuário deve ser autenticado e redirecionado para o painel principal.
 - Se as credenciais estiverem incorretas, o sistema deve exibir uma mensagem de erro específica.
 - Após múltiplas tentativas incorretas, o sistema deve bloquear temporariamente o acesso.
 
-### RF03: Validação de Presença
-**Cenário de uso:** O professor, durante a aula, solicita a geração de um QR code para que os alunos possam registrar a presença.
+### RF03: Cadastro de Workshops
+**Cenário de uso:** O professor acessa o sistema, seleciona a opção de cadastro de workshops e adiciona um novo workshop com dados como nome, descrição, etc.
+
+**Critérios de aceitação:** 
+- O workshop deve ser criado com sucesso, e uma mensagem de confirmação deve ser exibida ao professor.
+- Todos os campos obrigatórios para a criação de um workshop devem ser preenchidos.
+- O sistema deve evitar duplicações de workshop com o mesmo nome e data.
+
+### RF04:  Inclusão de Alunos Voluntários no Workshop
+**Cenário de uso:** O criador do workshop associa um aluno voluntário como instrutor para organizar as aulas.
+**Critérios de aceitação:** 
+- O aluno voluntário deve ser adicionado corretamente ao workshop selecionado.
+- Caso o aluno já esteja associado, o sistema deve notificar o professor.
+
+
+### RF05: Registro de Presença dos Alunos Participantes com QR Code
+**Cenário de uso:** Durante o workshop, o professor solicita a geração de um QR code para que os alunos participantes possam registrar a presença.
 
 **Critérios de aceitação:** 
 - O QR code deve ser gerado e exibido ao professor com um período de validade específico.
-- O QR code deve ser único para cada sessão de aula.
-- Após o período de validade, o QR code deve expirar e não ser mais utilizável.
+- O QR code deve ser único para cada sessão de workshop.
+- Após o período de validade, o QR code deve expirar e não ser mais utilizável
 
-### RF04: Cadastro de Turmas pelo Professor
-**Cenário de uso:** O professor acessa o sistema, seleciona a opção de cadastro de turmas e adiciona uma nova turma com dados como nome, descrição, etc.
-
-**Critérios de aceitação:** 
-- A turma deve ser criada com sucesso, e uma mensagem de confirmação deve ser exibida ao professor.
-- Todos os campos obrigatórios para a criação de uma turma devem ser preenchidos.
-- O sistema deve evitar duplicações de turma com o mesmo nome e ano letivo.
-
-### RF05: Criação de oficinas
-**Cenário de uso:** O professor escolhe uma oficina existente e associa uma turma a ela para organizar as aulas.
+### RF06: Consulta de Relatórios de Workshops
+**Cenário de uso:** O professor acessa o sistema para consultar o relatório de um workshop específico, visualizando a lista de alunos voluntários e participantes.
 
 **Critérios de aceitação:** 
-- A turma deve ser adicionada corretamente à oficina selecionada.
-- Caso a turma já esteja associada, o sistema deve notificar o professor.
-
-### RF06: Registro de presença pelo professor
-**Cenário de uso:** O professor acessa a lista de presença e registra manualmente a presença dos alunos para uma aula específica.
-
-**Critérios de aceitação:** 
-- A presença deve ser registrada corretamente e exibida na lista de presença da turma.
-- O sistema deve permitir ajustes posteriores pelo professor.
-
-### RF07: Registro de presença dos alunos
-**Cenário de uso:** O aluno acessa o sistema durante a aula e escaneia o QR code fornecido pelo professor para registrar sua presença.
-
-**Critérios de aceitação:** 
-- A presença deve ser registrada com sucesso quando o QR code é escaneado dentro do período de validade.
-- Caso o QR code esteja expirado, o sistema deve notificar o aluno e não registrar a presença.
-
-### RF08: Consulta de alunos cadastrados 
-**Cenário de uso:** O professor acessa o sistema para consultar a lista de presença de uma turma específica.
-
-**Critérios de aceitação:** 
-- O sistema deve exibir a lista de presença corretamente, mostrando os alunos que compareceram e suas respectivas datas.
-- O professor deve poder visualizar a lista por data e por oficina/turma.
+- O sistema deve exibir a lista de presença corretamente, mostrando os alunos voluntários e os participantes, incluindo datas e horários de presença.
+- O professor deve poder visualizar o relatório por data, aluno voluntário e workshop.
 
 ## 2. Arquitetura em Alto Nível do Sistema
 Clean Architecture foi a arquitetura escolhida para ser utilizada no backend.
@@ -107,6 +91,7 @@ Pensando em um sistema que o usuario tera login e senha para realizar o visto po
 
 ### 2. Escopo dos Testes Automatizados 
 - Testes End-to-End: Automatização dos cenários de teste cobrindo fluxos completos de usuário, como cadastro, login, registro de presença e geração de QR code, garantindo que cada interação funcione conforme o esperado.
+- Testes Funcionais nas Rotas da API: Realização de testes para verificar se as rotas da API estão respondendo corretamente e se os dados esperados estão sendo retornados. Isso inclui testes de retorno para operações como cadastro de alunos voluntários e login de usuários.
 
 ### 3. Ferramentes para Automação 
 - Cypress: Ferramenta principal para execução de testes end-to-end, com suporte para validações em tempo real de interfaces web.
@@ -114,7 +99,6 @@ Pensando em um sistema que o usuario tera login e senha para realizar o visto po
 
 ###  4. Ambiente de Execução dos Testes
 - Ambiente de Desenvolvimento: Os testes serão inicialmente executados neste ambiente para validar as funcionalidades conforme forem implementadas e revisadas.
-- Possibilidade de CI/CD: Integração futura com um pipeline CI/CD (como GitHub Actions ou GitLab CI/CD), onde os testes serão executados automaticamente em cada commit ou pull request para garantir uma integração contínua e rápida identificação de falhas.
 
 ### 5. Critérios de Aceitação para a Automação 
 - Cobertura de Teste: Alcançar um mínimo de 80% de cobertura dos fluxos principais e interações essenciais do sistema.
