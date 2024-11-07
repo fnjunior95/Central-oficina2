@@ -112,6 +112,6 @@ Pensando em um sistema que o usuario tera login e senha para realizar o visto po
 ### Principais Tecnologias
 - Linguagens de Programação: [.NET(C#), JavaScript]
 - Frameworks: [React, Specflow, coverage]
-- Banco de Dados: [MySQL, Entity Framework)]
+- Banco de Dados: [SqlServer, Entity Framework)]
 - Outras Ferramentas: [Docker, GitHub Actions]
 
