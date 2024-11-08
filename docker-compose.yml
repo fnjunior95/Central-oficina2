@@ -1,7 +1,19 @@
+sversion: '3.8'
+
 services:
+  webapi:
+    build:
+      context: ./back/entrypoints/WebApplication1/WebApi
+      dockerfile: Dockerfile
+    ports:
+      - "5000:80"
+    depends_on:
+      - mysql
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
   mysql:
     image: mysql:latest
-    container_name: my_mysql
     environment:
       MYSQL_ROOT_PASSWORD: admin
       MYSQL_DATABASE: ELLP
@@ -11,32 +23,7 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./Db/backup_ellp.sql:/docker-entrypoint-initdb.d/backup_ellp.sql
-    restart: always
-
-  springboot-app:
-    build:
-      context: ./Back  
-      dockerfile: Dockerfile
-    container_name: springboot_app
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/ELLP
-      SPRING_DATASOURCE_USERNAME: admin
-      SPRING_DATASOURCE_PASSWORD: admin
-    ports:
-      - "8080:8080"
-    depends_on:
-      - mysql
-
-  react-app:
-    build:
-      context: ./front-end  
-      dockerfile: Dockerfile.react
-    container_name: react_app
-    ports:
-      - "3000:3000"
-    depends_on:
-      - springboot-app
 
 volumes:
-  mysql_data: {}
+  mysql_data:
+
