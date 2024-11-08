@@ -1,0 +1,15 @@
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\bin\Debug\net8.0\SSE.Oficina.Rabbit.exe
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\bin\Debug\net8.0\SSE.Oficina.Rabbit.deps.json
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\bin\Debug\net8.0\SSE.Oficina.Rabbit.runtimeconfig.json
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\bin\Debug\net8.0\SSE.Oficina.Rabbit.dll
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\bin\Debug\net8.0\SSE.Oficina.Rabbit.pdb
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\obj\Debug\net8.0\SSE.Oficina.Rabbit.GeneratedMSBuildEditorConfig.editorconfig
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\obj\Debug\net8.0\SSE.Oficina.Rabbit.AssemblyInfoInputs.cache
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\obj\Debug\net8.0\SSE.Oficina.Rabbit.AssemblyInfo.cs
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\obj\Debug\net8.0\SSE.Oficina.Rabbit.csproj.CoreCompileInputs.cache
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\obj\Debug\net8.0\SSE.Oficina.Rabbit.sourcelink.json
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\obj\Debug\net8.0\SSE.Oficina.Rabbit.dll
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\obj\Debug\net8.0\refint\SSE.Oficina.Rabbit.dll
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\obj\Debug\net8.0\SSE.Oficina.Rabbit.pdb
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\obj\Debug\net8.0\SSE.Oficina.Rabbit.genruntimeconfig.cache
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.Rabbit\obj\Debug\net8.0\ref\SSE.Oficina.Rabbit.dll

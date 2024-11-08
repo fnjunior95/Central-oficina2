@@ -1,0 +1,25 @@
+C:\Users\edufr\source\repos\WebApplication1\Entrypoint\WebApplication1.ServiceDefaults\bin\Debug\net8.0\WebApi.ServiceDefaults.deps.json
+C:\Users\edufr\source\repos\WebApplication1\Entrypoint\WebApplication1.ServiceDefaults\bin\Debug\net8.0\WebApi.ServiceDefaults.dll
+C:\Users\edufr\source\repos\WebApplication1\Entrypoint\WebApplication1.ServiceDefaults\bin\Debug\net8.0\WebApi.ServiceDefaults.pdb
+C:\Users\edufr\source\repos\WebApplication1\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.csproj.AssemblyReference.cache
+C:\Users\edufr\source\repos\WebApplication1\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\edufr\source\repos\WebApplication1\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.AssemblyInfoInputs.cache
+C:\Users\edufr\source\repos\WebApplication1\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.AssemblyInfo.cs
+C:\Users\edufr\source\repos\WebApplication1\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.csproj.CoreCompileInputs.cache
+C:\Users\edufr\source\repos\WebApplication1\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.dll
+C:\Users\edufr\source\repos\WebApplication1\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\refint\WebApi.ServiceDefaults.dll
+C:\Users\edufr\source\repos\WebApplication1\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.pdb
+C:\Users\edufr\source\repos\WebApplication1\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\ref\WebApi.ServiceDefaults.dll
+D:\Nova pasta\Back\Entrypoint\WebApplication1.ServiceDefaults\bin\Debug\net8.0\WebApi.ServiceDefaults.deps.json
+D:\Nova pasta\Back\Entrypoint\WebApplication1.ServiceDefaults\bin\Debug\net8.0\WebApi.ServiceDefaults.dll
+D:\Nova pasta\Back\Entrypoint\WebApplication1.ServiceDefaults\bin\Debug\net8.0\WebApi.ServiceDefaults.pdb
+D:\Nova pasta\Back\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.csproj.AssemblyReference.cache
+D:\Nova pasta\Back\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+D:\Nova pasta\Back\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.AssemblyInfoInputs.cache
+D:\Nova pasta\Back\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.AssemblyInfo.cs
+D:\Nova pasta\Back\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.csproj.CoreCompileInputs.cache
+D:\Nova pasta\Back\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.sourcelink.json
+D:\Nova pasta\Back\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.dll
+D:\Nova pasta\Back\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\refint\WebApi.ServiceDefaults.dll
+D:\Nova pasta\Back\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\WebApi.ServiceDefaults.pdb
+D:\Nova pasta\Back\Entrypoint\WebApplication1.ServiceDefaults\obj\Debug\net8.0\ref\WebApi.ServiceDefaults.dll

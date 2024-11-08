@@ -1,0 +1,6 @@
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.SqlServer\obj\Debug\net8.0\SSE.Oficina.SqlServer.csproj.AssemblyReference.cache
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.SqlServer\obj\Debug\net8.0\SSE.Oficina.SqlServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.SqlServer\obj\Debug\net8.0\SSE.Oficina.SqlServer.AssemblyInfoInputs.cache
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.SqlServer\obj\Debug\net8.0\SSE.Oficina.SqlServer.AssemblyInfo.cs
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.SqlServer\obj\Debug\net8.0\SSE.Oficina.SqlServer.csproj.CoreCompileInputs.cache
+D:\Nova pasta\Back\Infraesctruture\SSE.Oficina.SqlServer\obj\Debug\net8.0\SSE.Oficina.SqlServer.sourcelink.json
