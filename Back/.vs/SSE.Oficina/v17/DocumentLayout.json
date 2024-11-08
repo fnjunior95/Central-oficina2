@@ -1,0 +1,261 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Nova pasta\\Back\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F3DDDD3A-899D-4FA9-B47F-C8DF2876302D}|Entrypoint\\WebApplication1\\WebApi.csproj|d:\\nova pasta\\back\\entrypoint\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3DDDD3A-899D-4FA9-B47F-C8DF2876302D}|Entrypoint\\WebApplication1\\WebApi.csproj|solutionrelative:entrypoint\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3DDDD3A-899D-4FA9-B47F-C8DF2876302D}|Entrypoint\\WebApplication1\\WebApi.csproj|d:\\nova pasta\\back\\entrypoint\\webapplication1\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{F3DDDD3A-899D-4FA9-B47F-C8DF2876302D}|Entrypoint\\WebApplication1\\WebApi.csproj|solutionrelative:entrypoint\\webapplication1\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{140BDB73-1182-41AB-865B-AE03710F235A}|Entrypoint\\WebApplication1.AppHost\\WebApi.AppHost.csproj|d:\\nova pasta\\back\\entrypoint\\webapplication1.apphost\\webapi.apphost.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{140BDB73-1182-41AB-865B-AE03710F235A}|Entrypoint\\WebApplication1.AppHost\\WebApi.AppHost.csproj|solutionrelative:entrypoint\\webapplication1.apphost\\webapi.apphost.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0098118-A6F8-406E-903C-15727A751E88}|Entrypoint\\WebApplication1.ServiceDefaults\\WebApi.ServiceDefaults.csproj|d:\\nova pasta\\back\\entrypoint\\webapplication1.servicedefaults\\webapi.servicedefaults.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F0098118-A6F8-406E-903C-15727A751E88}|Entrypoint\\WebApplication1.ServiceDefaults\\WebApi.ServiceDefaults.csproj|solutionrelative:entrypoint\\webapplication1.servicedefaults\\webapi.servicedefaults.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3DDDD3A-899D-4FA9-B47F-C8DF2876302D}|Entrypoint\\WebApplication1\\WebApi.csproj|d:\\nova pasta\\back\\entrypoint\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F3DDDD3A-899D-4FA9-B47F-C8DF2876302D}|Entrypoint\\WebApplication1\\WebApi.csproj|solutionrelative:entrypoint\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA9B6169-D87D-4D4F-B5D6-E49DBA9A2757}|Infraesctruture\\SSE.Oficina.SqlServer\\SSE.Oficina.SqlServer.csproj|d:\\nova pasta\\back\\infraesctruture\\sse.oficina.sqlserver\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA9B6169-D87D-4D4F-B5D6-E49DBA9A2757}|Infraesctruture\\SSE.Oficina.SqlServer\\SSE.Oficina.SqlServer.csproj|solutionrelative:infraesctruture\\sse.oficina.sqlserver\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{150D2E83-AA23-49F3-B65A-EF932BF79B21}|Domain\\SSE.Oficina.Domain.csproj|d:\\nova pasta\\back\\domain\\entities\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{150D2E83-AA23-49F3-B65A-EF932BF79B21}|Domain\\SSE.Oficina.Domain.csproj|solutionrelative:domain\\entities\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{150D2E83-AA23-49F3-B65A-EF932BF79B21}|Domain\\SSE.Oficina.Domain.csproj|d:\\nova pasta\\back\\domain\\entities\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{150D2E83-AA23-49F3-B65A-EF932BF79B21}|Domain\\SSE.Oficina.Domain.csproj|solutionrelative:domain\\entities\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{150D2E83-AA23-49F3-B65A-EF932BF79B21}|Domain\\SSE.Oficina.Domain.csproj|d:\\nova pasta\\back\\domain\\entities\\workshop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{150D2E83-AA23-49F3-B65A-EF932BF79B21}|Domain\\SSE.Oficina.Domain.csproj|solutionrelative:domain\\entities\\workshop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{150D2E83-AA23-49F3-B65A-EF932BF79B21}|Domain\\SSE.Oficina.Domain.csproj|d:\\nova pasta\\back\\domain\\sse.oficina.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{150D2E83-AA23-49F3-B65A-EF932BF79B21}|Domain\\SSE.Oficina.Domain.csproj|solutionrelative:domain\\sse.oficina.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA9B6169-D87D-4D4F-B5D6-E49DBA9A2757}|Infraesctruture\\SSE.Oficina.SqlServer\\SSE.Oficina.SqlServer.csproj|d:\\nova pasta\\back\\infraesctruture\\sse.oficina.sqlserver\\sse.oficina.sqlserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{BA9B6169-D87D-4D4F-B5D6-E49DBA9A2757}|Infraesctruture\\SSE.Oficina.SqlServer\\SSE.Oficina.SqlServer.csproj|solutionrelative:infraesctruture\\sse.oficina.sqlserver\\sse.oficina.sqlserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BED3535-08CF-470D-948B-40D194AE26C8}|Application\\SSE.Oficina.Application.csproj|d:\\nova pasta\\back\\application\\sse.oficina.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7BED3535-08CF-470D-948B-40D194AE26C8}|Application\\SSE.Oficina.Application.csproj|solutionrelative:application\\sse.oficina.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3DDDD3A-899D-4FA9-B47F-C8DF2876302D}|Entrypoint\\WebApplication1\\WebApi.csproj|d:\\nova pasta\\back\\entrypoint\\webapplication1\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F3DDDD3A-899D-4FA9-B47F-C8DF2876302D}|Entrypoint\\WebApplication1\\WebApi.csproj|solutionrelative:entrypoint\\webapplication1\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3DDDD3A-899D-4FA9-B47F-C8DF2876302D}|Entrypoint\\WebApplication1\\WebApi.csproj|d:\\nova pasta\\back\\entrypoint\\webapplication1\\webapplication1.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{F3DDDD3A-899D-4FA9-B47F-C8DF2876302D}|Entrypoint\\WebApplication1\\WebApi.csproj|solutionrelative:entrypoint\\webapplication1\\webapplication1.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dockerfile",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1\\dockerfile",
+              "RelativeDocumentMoniker": "Entrypoint\\WebApplication1\\dockerfile",
+              "ToolTip": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1\\dockerfile",
+              "RelativeToolTip": "Entrypoint\\WebApplication1\\dockerfile",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-08T00:51:32.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SSE.Oficina.SqlServer",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Infraesctruture\\SSE.Oficina.SqlServer\\SSE.Oficina.SqlServer.csproj",
+              "RelativeDocumentMoniker": "Infraesctruture\\SSE.Oficina.SqlServer\\SSE.Oficina.SqlServer.csproj",
+              "ToolTip": "D:\\Nova pasta\\Back\\Infraesctruture\\SSE.Oficina.SqlServer\\SSE.Oficina.SqlServer.csproj",
+              "RelativeToolTip": "Infraesctruture\\SSE.Oficina.SqlServer\\SSE.Oficina.SqlServer.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-08T00:18:12.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Aluno.cs",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Domain\\Entities\\Aluno.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Aluno.cs",
+              "ToolTip": "D:\\Nova pasta\\Back\\Domain\\Entities\\Aluno.cs",
+              "RelativeToolTip": "Domain\\Entities\\Aluno.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T23:51:18.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SSE.Oficina.Domain.csproj",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Domain\\SSE.Oficina.Domain.csproj",
+              "RelativeDocumentMoniker": "Domain\\SSE.Oficina.Domain.csproj",
+              "ToolTip": "D:\\Nova pasta\\Back\\Domain\\SSE.Oficina.Domain.csproj",
+              "RelativeToolTip": "Domain\\SSE.Oficina.Domain.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-07T23:50:44.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dbcontext.cs",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Infraesctruture\\SSE.Oficina.SqlServer\\Dbcontext.cs",
+              "RelativeDocumentMoniker": "Infraesctruture\\SSE.Oficina.SqlServer\\Dbcontext.cs",
+              "ToolTip": "D:\\Nova pasta\\Back\\Infraesctruture\\SSE.Oficina.SqlServer\\Dbcontext.cs",
+              "RelativeToolTip": "Infraesctruture\\SSE.Oficina.SqlServer\\Dbcontext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T23:50:07.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Workshop.cs",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Domain\\Entities\\Workshop.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Workshop.cs",
+              "ToolTip": "D:\\Nova pasta\\Back\\Domain\\Entities\\Workshop.cs",
+              "RelativeToolTip": "Domain\\Entities\\Workshop.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T23:52:31.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Professor.cs",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Domain\\Entities\\Professor.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Professor.cs",
+              "ToolTip": "D:\\Nova pasta\\Back\\Domain\\Entities\\Professor.cs",
+              "RelativeToolTip": "Domain\\Entities\\Professor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T23:52:25.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "Entrypoint\\WebApplication1\\Program.cs",
+              "ToolTip": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "Entrypoint\\WebApplication1\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T23:43:11.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1\\appsettings.json",
+              "RelativeDocumentMoniker": "Entrypoint\\WebApplication1\\appsettings.json",
+              "ToolTip": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1\\appsettings.json",
+              "RelativeToolTip": "Entrypoint\\WebApplication1\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-07T23:39:45.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WebApi.ServiceDefaults",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1.ServiceDefaults\\WebApi.ServiceDefaults.csproj",
+              "RelativeDocumentMoniker": "Entrypoint\\WebApplication1.ServiceDefaults\\WebApi.ServiceDefaults.csproj",
+              "ToolTip": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1.ServiceDefaults\\WebApi.ServiceDefaults.csproj",
+              "RelativeToolTip": "Entrypoint\\WebApplication1.ServiceDefaults\\WebApi.ServiceDefaults.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-08T00:23:43.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WebApi.AppHost",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1.AppHost\\WebApi.AppHost.csproj",
+              "RelativeDocumentMoniker": "Entrypoint\\WebApplication1.AppHost\\WebApi.AppHost.csproj",
+              "ToolTip": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1.AppHost\\WebApi.AppHost.csproj",
+              "RelativeToolTip": "Entrypoint\\WebApplication1.AppHost\\WebApi.AppHost.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-08T00:23:45.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SSE.Oficina.Application.csproj",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Application\\SSE.Oficina.Application.csproj",
+              "RelativeDocumentMoniker": "Application\\SSE.Oficina.Application.csproj",
+              "ToolTip": "D:\\Nova pasta\\Back\\Application\\SSE.Oficina.Application.csproj",
+              "RelativeToolTip": "Application\\SSE.Oficina.Application.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-07T23:45:41.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "WebApi.csproj",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1\\WebApi.csproj",
+              "RelativeDocumentMoniker": "Entrypoint\\WebApplication1\\WebApi.csproj",
+              "ToolTip": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1\\WebApi.csproj",
+              "RelativeToolTip": "Entrypoint\\WebApplication1\\WebApi.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-07T23:49:04.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "WebApplication1.http",
+              "DocumentMoniker": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1\\WebApplication1.http",
+              "RelativeDocumentMoniker": "Entrypoint\\WebApplication1\\WebApplication1.http",
+              "ToolTip": "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1\\WebApplication1.http",
+              "RelativeToolTip": "Entrypoint\\WebApplication1\\WebApplication1.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-11-07T23:44:54.527Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
