@@ -18,13 +18,14 @@ using System.Reflection;
     "t\\")]
 [assembly: System.Reflection.AssemblyMetadata("dcpbinpath", "C:\\Program Files\\dotnet\\packs\\Aspire.Hosting.Orchestration.win-x64\\8.0.0\\tools\\ex" +
     "t\\bin\\")]
-[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "D:\\Nova pasta\\Back\\Entrypoint\\WebApplication1.AppHost")]
+[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "C:\\Users\\edufr\\OneDrive\\Belgeler\\GIthub\\Oficina2\\Back\\Entrypoint\\WebApplication1." +
+    "AppHost")]
 [assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", "C:\\Program Files\\dotnet\\packs\\Aspire.Dashboard.Sdk.win-x64\\8.0.0\\tools\\Aspire.Das" +
     "hboard.exe")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApi.AppHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcd1790da1781936aa85689f2708a65ae9515bf1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f09da0fdd765f3efb1c3929674c2e86a68d7dfae")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApi.AppHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApi.AppHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
