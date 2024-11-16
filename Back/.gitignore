@@ -36,3 +36,5 @@ obj/
 
 # Backup files
 *~
+# Ignore Visual Studio files
+.vs/
