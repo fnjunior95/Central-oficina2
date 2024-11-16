@@ -25,7 +25,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApi.AppHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f09da0fdd765f3efb1c3929674c2e86a68d7dfae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82c7beec823ebf19a3eae7bf0a0d9f5980d62b25")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApi.AppHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApi.AppHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
