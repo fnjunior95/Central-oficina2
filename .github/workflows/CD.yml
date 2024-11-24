@@ -35,15 +35,15 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Build .NET application
-        working-directory: ./back/entrypoint/webapi  # Caminho para o diretório da aplicação
+        working-directory: ./back
         run: dotnet build --configuration Release
 
       - name: Run .NET tests
-        working-directory: ./back/entrypoint/webapi  # Caminho para o diretório da aplicação
+        working-directory: ./back
         run: dotnet test --configuration Release
 
       - name: Publish .NET application
-        working-directory: ./back/entrypoint/webapi  # Caminho para o diretório da aplicação
+        working-directory: ./back
         run: |
           dotnet publish -c Release -o ./publish
 
