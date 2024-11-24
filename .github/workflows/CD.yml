@@ -3,10 +3,14 @@ name: CI/CD
 on:
   push:
     branches:
-      - feature/eduardo
+      - main
+      - dev
+      - 'feature/*'  # Qualquer branch que comece com "feature/"
   pull_request:
     branches:
       - main
+      - dev
+      - 'feature/*'  # Qualquer branch que comece com "feature/"
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
