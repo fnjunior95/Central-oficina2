@@ -25,13 +25,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\infra\OficinaELLP.Infra.Mysql.csproj" />
+		<ProjectReference Include="..\..\infra\OficinaELLP.Infra.SqlServer.csproj" />
 		<ProjectReference Include="..\..\OficinaELLP.Infra.Mysql\OficinaELLP.Infra.Mysql.csproj" />
 		<ProjectReference Include="..\WebApi.ServiceDefaults\WebApi.ServiceDefaults.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="Controllers\V1\" />
 	</ItemGroup>
 
 </Project>

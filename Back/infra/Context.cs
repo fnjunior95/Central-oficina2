@@ -1,16 +1,30 @@
-﻿using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;  
 using OficinaELLP.Domain.Entities;
-namespace OficinaELLP.Infra.Mysql{
+
+namespace OficinaELLP.Infra.SqlServer
+{
     public class Context : DbContext
     {
-        public Context(DbContextOptions<DbContext> options)
-        : base(options)
+        private readonly IConfiguration _configuration;
+
+        public Context(DbContextOptions<Context> options, IConfiguration configuration)
+            : base(options)
         {
+            _configuration = configuration;
         }
 
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Workshop> Workshops { get; set; }
         public DbSet<Professor> Professores { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                var connectionString = _configuration.GetConnectionString("MyDbConnection");
+                optionsBuilder.UseSqlServer(connectionString);
+            }
+        }
     }
 }

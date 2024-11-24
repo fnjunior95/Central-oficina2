@@ -1,14 +1,13 @@
 using Microsoft.EntityFrameworkCore;
-using OficinaELLP.Infra.Mysql;
+using OficinaELLP.Infra.SqlServer;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddControllers();
 builder.Services.AddDbContext<Context>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("MySqlConnection"),
-        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("MySqlConnection"))));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MyDbConnection"))); 
 
-
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -22,7 +21,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
-
 app.MapControllers();
 
-app.Run(); 
+app.Run();

@@ -36,7 +36,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "Entrypoint\WebApi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.ServiceDefaults", "Entrypoint\WebApi.ServiceDefaults\WebApi.ServiceDefaults.csproj", "{833F6C39-A549-48E6-BAE7-76BB36B4553B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OficinaELLP.Infra.Mysql", "infra\OficinaELLP.Infra.Mysql.csproj", "{26410097-B394-4BBF-BC85-A47366614F87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OficinaELLP.Infra.SqlServer", "infra\OficinaELLP.Infra.SqlServer.csproj", "{26410097-B394-4BBF-BC85-A47366614F87}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OficinaELLP.Application", "Application\OficinaELLP.Application.csproj", "{FB1EAB6A-9BF0-4C4C-ABF8-6C5F254BC085}"
 EndProject
