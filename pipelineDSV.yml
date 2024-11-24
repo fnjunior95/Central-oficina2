@@ -3,16 +3,17 @@ version: '3.8'
 services:
   webapi:
     build:
-      context: ./novapasta/back/entrypoint/WebApplication1/WebApi
+      context: .  
+      dockerfile: Back/docker/Dockerfile  
     container_name: webapi-container
     environment:
-      MYSQL_CONNECTION_STRING: "${MYSQL_CONNECTION_STRING}" secrets)
+      MYSQL_CONNECTION_STRING: "${MYSQL_CONNECTION_STRING}"
     ports:
-      - "5000:80"  
+      - "5000:80"
     volumes:
       - ./novapasta/back:/app
-    working_dir: /app/entrypoint/WebApplication1/WebApi 
-    command: ["dotnet", "WebApi.dll"]  # Comando para rodar a API
+    working_dir: /app/entrypoint/WebApplication1/WebApi
+    command: ["dotnet", "WebApi.dll"]
     restart: always
 
   mysql:
@@ -28,6 +29,15 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
       - ./novapasta/db/backup_ellp.sql:/docker-entrypoint-initdb.d/backup_ellp.sql
+    restart: always
+
+  react-app:
+    build:
+      context: . 
+      dockerfile: front/docker/Dockerfile-react  #
+    container_name: react-app-container
+    ports:
+      - "3000:80" 
     restart: always
 
 volumes:
