@@ -20,7 +20,6 @@ on:
         type: string
 
 jobs:
-  # Job para o Build
   build:
     runs-on: ubuntu-latest
     steps:
@@ -47,7 +46,6 @@ jobs:
         run: |
           dotnet publish -c Release -o ./publish
 
-  # Job para o Publish (Deploy) no Azure Web App
   publish:
     runs-on: ubuntu-latest
     needs: build  # Espera o job "build" finalizar com sucesso
@@ -70,7 +68,7 @@ jobs:
 
   docker:
     runs-on: ubuntu-latest
-    needs: build  # Espera o job "build" finalizar com sucesso
+    needs: build 
     steps:
       - name: Build Docker image
         run: docker build -t my-image:latest ./back/entrypoint/webapi  # Caminho para o diretório do Dockerfile
