@@ -52,7 +52,7 @@ jobs:
         ref: ${{ github.event.inputs.branch || github.ref }}  # Permite escolher a branch
 
     - name: Build Docker image
-      run: docker build -t myapp-webapi ./Back/entrypoint/WebApi
+      run: docker build -t myapp-webapi ../Back/entrypoint/WebApi
 
     - name: Publish Docker image to Azure Container Registry (ACR)
       run: |
