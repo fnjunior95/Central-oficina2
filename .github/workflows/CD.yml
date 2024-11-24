@@ -27,7 +27,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        ref: ${{ github.event.inputs.branch || github.ref }}  # Permite escolher a branch
+        ref: ${{ github.event.inputs.branch || github.ref }}
 
     - name: Set up .NET 8
       uses: actions/setup-dotnet@v3
@@ -35,24 +35,30 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Build .NET application
-      working-directory: ./Back/Entrypoint/WebApi  # Caminho correto para o diretório onde o .csproj está
+      working-directory: ./Back
       run: dotnet build --configuration Release
 
     - name: Run .NET tests
-      working-directory: ./Back/Entrypoint/WebApi  # Caminho correto para o diretório onde o .csproj está
+      working-directory: ./Back
       run: dotnet test --configuration Release
 
   publish:
     runs-on: ubuntu-latest
-    needs: build  # O step de publish só roda depois do build
+    needs: build
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        ref: ${{ github.event.inputs.branch || github.ref }}  # Permite escolher a branch
+        ref: ${{ github.event.inputs.branch || github.ref }}
+
+    - name: Set up Docker
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y docker.io
 
     - name: Build Docker image
-      run: docker build -t myapp-webapi ../Back/Entrypoint/WebApi  # Corrigido para o caminho correto do Dockerfile
+      working-directory: ./Back/Entrypoint/WebApi
+      run: docker build -t myapp-webapi .  # Garante que o Dockerfile correto será encontrado
 
     - name: Publish Docker image to Azure Container Registry (ACR)
       run: |
@@ -62,10 +68,10 @@ jobs:
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: "my-azure-app"
+        app-name: "my-azure-app"  # Substitua com o nome real da sua aplicação no Azure
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ./Back/Entrypoint/WebApi  # Caminho para o pacote .NET
+        package: ./Back/Entrypoint/WebApi/out  # O pacote a ser publicado (saída do dotnet publish)
         connection-string: ${{ secrets.SQL_SERVER_SECRET }}
-        
+
     - name: Clean up
       run: docker system prune -af
