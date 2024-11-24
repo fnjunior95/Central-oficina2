@@ -5,12 +5,12 @@ on:
     branches:
       - main
       - dev
-      - 'feature/*'  # Qualquer branch que comece com "feature/"
+      - 'feature/*'  
   pull_request:
     branches:
       - main
       - dev
-      - 'feature/*'  # Qualquer branch que comece com "feature/"
+      - 'feature/*'  
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
