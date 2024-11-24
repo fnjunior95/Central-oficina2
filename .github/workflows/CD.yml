@@ -29,10 +29,10 @@ jobs:
       with:
         ref: ${{ github.event.inputs.branch }}
 
-    - name: Set up .NET Core
+    - name: Set up .NET 8
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '6.0.x'  # Use a versão do .NET Core que você está utilizando
+        dotnet-version: '8.0.x'  # Usando a versão do .NET 8
 
     - name: Build .NET application
       working-directory: ./novapasta/back/entrypoint/WebApplication1/WebApi
@@ -49,10 +49,20 @@ jobs:
     - name: Azure Login
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: ${{ secrets.AZURE_CREDENTIALS }}  # Usando o secret com as credenciais Azure
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: ${{ secrets.AZURE_WEBAPP_NAME }}  # Nome do seu Azure Web App
+        app-name: ${{ secrets.AZURE_WEBAPP_NAME }}  # Nome do Azure Web App
         package: './publish'  # Diretório de saída do .NET Publish
+
+    - name: Push Docker image to Google Container Registry
+      env:
+        SQL_SERVER_SECRET: ${{ secrets.SQL_SERVER_SECRET }}  # Usando o secret da string de conexão do SQL Server
+      run: |
+        echo "${{ secrets.GCP_SA_KEY }}" | gcloud auth activate-service-account --key-file=-  # Usando o secret da chave do Google Cloud
+        gcloud config set project ${{ secrets.GCP_PROJECT_ID }}  # Passando secret do projeto Google Cloud
+        gcloud auth configure-docker
+        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/webapi:latest
+
