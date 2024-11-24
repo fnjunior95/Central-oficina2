@@ -27,7 +27,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        ref: ${{ github.event.inputs.branch || github.ref }}  # Permite escolher a branch
+        ref: ${{ github.event.inputs.branch || github.ref }}
 
     - name: Set up .NET 8
       uses: actions/setup-dotnet@v3
@@ -44,15 +44,21 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
-    needs: build  # O step de publish só roda depois do build
+    needs: build
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        ref: ${{ github.event.inputs.branch || github.ref }}  # Permite escolher a branch
+        ref: ${{ github.event.inputs.branch || github.ref }}
+
+    - name: Set up Docker
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y docker.io
 
     - name: Build Docker image
-      run: docker build -t myapp-webapi ../Back/entrypoint/WebApi
+      working-directory: ./Back/Entrypoint/WebApi
+      run: docker build -t myapp-webapi .  # Garante que o Dockerfile correto será encontrado
 
     - name: Publish Docker image to Azure Container Registry (ACR)
       run: |
@@ -62,11 +68,10 @@ jobs:
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: "my-azure-app"
+        app-name: "my-azure-app"  # Substitua com o nome real da sua aplicação no Azure
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ./Back/entrypoint/WebApi
+        package: ./Back/Entrypoint/WebApi/out  # O pacote a ser publicado (saída do dotnet publish)
         connection-string: ${{ secrets.SQL_SERVER_SECRET }}
-        
+
     - name: Clean up
       run: docker system prune -af
-
