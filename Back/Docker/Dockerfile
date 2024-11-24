@@ -16,4 +16,3 @@ WORKDIR /app
 COPY --from=build /app/out .
 
 ENTRYPOINT ["dotnet", "WebApi.dll"]
-
