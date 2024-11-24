@@ -10,7 +10,8 @@ on:
     branches:
       - main
       - dev
-      - 'feature/*'  
+      - 'feature/*'
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -32,42 +33,37 @@ jobs:
           --health-retries 3
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up .NET Core
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '6.0.x' # Use a versão do .NET Core que você está utilizando
+      - name: Set up .NET 8
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
 
-    - name: Build .NET application
-      working-directory: ./novapasta/back/entrypoint/WebApplication1/WebApi
-      run: dotnet build --configuration Release
+      - name: Build .NET application
+        working-directory: ./novapasta/back/entrypoint/WebApplication1/WebApi
+        run: dotnet build --configuration Release
 
-    - name: Run database migrations or seed data
-      run: |
-        docker exec my_mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" ELLP < /docker-entrypoint-initdb.d/backup_ellp.sql'
+      - name: Run database migrations or seed data
+        run: |
+          docker exec my_mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" ELLP < /docker-entrypoint-initdb.d/backup_ellp.sql'
 
-    - name: Run .NET tests
-      working-directory: ./novapasta/back/entrypoint/WebApplication1/WebApi
-      run: dotnet test --configuration Release
+      - name: Run .NET tests
+        working-directory: ./novapasta/back/entrypoint/WebApplication1/WebApi
+        run: dotnet test --configuration Release
 
-    - name: Build Docker image
-      run: docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/webapi:latest ./novapasta/back/entrypoint/WebApplication1/WebApi
+      - name: Build Docker image
+        run: docker build -t myapp/webapi:latest ./novapasta/back/entrypoint/WebApplication1/WebApi
 
-    - name: Push Docker image to Google Container Registry
-      env:
-        MYSQL_CONNECTION_STRING: ${{ secrets.MYSQL_CONNECTION_STRING }}
-      run: |
-        echo "${{ secrets.GCP_SA_KEY }}" | gcloud auth activate-service-account --key-file=-
-        gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
-        gcloud auth configure-docker
-        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/webapi:latest
+      - name: Push Docker image to Docker Hub
+        env:
+          MYSQL_CONNECTION_STRING: ${{ secrets.MYSQL_CONNECTION_STRING }}
+        run: |
+          echo "${{ secrets.DOCKER_USERNAME }}" | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          docker push myapp/webapi:latest
 
-    - name: Deploy to Google Cloud Run
-      env:
-        MYSQL_CONNECTION_STRING: ${{ secrets.MYSQL_CONNECTION_STRING }}
-      run: |
-        echo "${{ secrets.GCP_SA_KEY }}" | gcloud auth activate-service-account --key-file=-
-        gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
-        gcloud run deploy webapi --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/webapi:latest --platform managed --region us-central1 --set-env-vars MYSQL_CONNECTION_STRING=${{ secrets.MYSQL_CONNECTION_STRING }} --allow-unauthenticated
+      - name: Deploy to production
+        run: |
+          echo "Deploying to production..."
+          # Adicione aqui a lógica de deploy para o seu servidor, por exemplo, via SSH ou outras ferramentas
