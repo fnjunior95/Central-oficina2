@@ -1,16 +1,16 @@
-# Utiliza a imagem do SDK do .NET para build
+
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Copia os arquivos .csproj e restaura as dependências
-COPY ./Back/Entrypoint/WebApi/WebApi.csproj ./entrypoint/WebApi/
-RUN dotnet restore ./entrypoint/WebApi/WebApi.csproj
 
-# Copia todos os outros arquivos e builda a aplicação
-COPY ./Back/ .
-RUN dotnet publish ./entrypoint/WebApi/WebApi.csproj -c Release -o out
+COPY ../OficinaELLP.sln ./ 
+COPY ../Entrypoint/WebApi/WebApi.csproj ./Entrypoint/WebApi/
+RUN dotnet restore ./OficinaELLP.sln
 
-# Utiliza a imagem runtime do .NET para executar a aplicação
+
+COPY ../ . 
+RUN dotnet publish ./Entrypoint/WebApi/WebApi.csproj -c Release -o /app/out
+
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /app/out .
