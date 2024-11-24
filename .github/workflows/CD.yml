@@ -35,11 +35,11 @@ jobs:
         dotnet-version: '8.0.x'  # Usando a versão do .NET 8
 
     - name: Build .NET application
-      working-directory: ./novapasta/back/entrypoint/WebApplication1/WebApi
+      working-directory: ./back/entrypoint/WebApi/WebApi
       run: dotnet build --configuration Release
 
     - name: Run .NET tests
-      working-directory: ./novapasta/back/entrypoint/WebApplication1/WebApi
+      working-directory: ./back/entrypoint/WebApi/WebApi
       run: dotnet test --configuration Release
 
     - name: Publish .NET application
