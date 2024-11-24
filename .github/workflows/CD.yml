@@ -35,11 +35,11 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Build .NET application
-      working-directory: ./Back
+      working-directory: ./Back/Entrypoint/WebApi  # Caminho correto para o diretório onde o .csproj está
       run: dotnet build --configuration Release
 
     - name: Run .NET tests
-      working-directory: ./Back
+      working-directory: ./Back/Entrypoint/WebApi  # Caminho correto para o diretório onde o .csproj está
       run: dotnet test --configuration Release
 
   publish:
@@ -52,7 +52,7 @@ jobs:
         ref: ${{ github.event.inputs.branch || github.ref }}  # Permite escolher a branch
 
     - name: Build Docker image
-      run: docker build -t myapp-webapi ../Back/entrypoint/WebApi
+      run: docker build -t myapp-webapi ../Back/Entrypoint/WebApi  # Corrigido para o caminho correto do Dockerfile
 
     - name: Publish Docker image to Azure Container Registry (ACR)
       run: |
@@ -64,9 +64,8 @@ jobs:
       with:
         app-name: "my-azure-app"
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ./Back/entrypoint/WebApi
+        package: ./Back/Entrypoint/WebApi  # Caminho para o pacote .NET
         connection-string: ${{ secrets.SQL_SERVER_SECRET }}
         
     - name: Clean up
       run: docker system prune -af
-
