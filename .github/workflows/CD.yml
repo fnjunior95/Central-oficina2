@@ -29,11 +29,12 @@ jobs:
       with:
         ref: ${{ github.event.inputs.branch || github.ref }}  # Permite escolher a branch
 
-    - name: Clean up existing containerd packages
+    - name: Install Docker
       run: |
-        sudo apt-get remove -y containerd containerd.io
-        sudo apt-get autoremove -y
-        sudo apt-get clean
+        sudo apt-get update
+        sudo apt-get install -y docker.io
+        sudo systemctl start docker
+        sudo systemctl enable docker
 
     - name: Set up .NET 8
       uses: actions/setup-dotnet@v3
@@ -57,11 +58,12 @@ jobs:
       with:
         ref: ${{ github.event.inputs.branch || github.ref }}  # Permite escolher a branch
 
-    - name: Clean up existing containerd packages
+    - name: Install Docker
       run: |
-        sudo apt-get remove -y containerd containerd.io
-        sudo apt-get autoremove -y
-        sudo apt-get clean
+        sudo apt-get update
+        sudo apt-get install -y docker.io
+        sudo systemctl start docker
+        sudo systemctl enable docker
 
     - name: Build Docker image
       run: docker build -t myapp-webapi ../Back/entrypoint/WebApi
