@@ -9,12 +9,13 @@
 
 	<ItemGroup>
 		<PackageReference Include="MediatR" Version="12.4.1" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\ellp.api.application\Ellp.Api.Application.csproj" />
-		<ProjectReference Include="..\Oficina.ellp.infra.sqlserver\Ellp.api.infra.sqlserver.csproj" />
+		<ProjectReference Include="..\Oficina.ellp.infra.sqlserver\Ellp.Api.Infra.SqlServer.csproj" />
 	</ItemGroup>
 
 </Project>

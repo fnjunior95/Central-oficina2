@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ellp.api.domain.entities;
+﻿using Ellp.Api.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Ellp.api.infra.sqlserver.Configurations
+namespace Ellp.Api.Infra.SqlServer.Configurations
 {
     public class AlunoConfiguration : IEntityTypeConfiguration<Aluno>
     {
@@ -21,12 +16,12 @@ namespace Ellp.api.infra.sqlserver.Configurations
                 .IsRequired()
                 .HasMaxLength(100);
 
-            builder.Property(x => x.Senha)
+            builder.Property(x => x.Password)
                 .HasColumnName("Senha")
                 .IsRequired()
                 .HasMaxLength(100);
 
-            builder.Property(x => x.DataNascimento)
+            builder.Property(x => x.BirthDate)
                 .HasColumnName("DataNascimento")
                 .IsRequired();
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ellp.api.domain.entities
+namespace Ellp.Api.Domain.Entities
 {
     public class WorkshopProfessor
     {

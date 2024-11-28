@@ -5,7 +5,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using Ellp.Api.Application.Interfaces;
 
-namespace Ellp.Api.Application.UseCases.LoginUsers
+namespace Ellp.Api.Application.UseCases.GetLoginUseCases.GetLoginStudent
 {
     public class GetLoginStudentUseCase : IRequestHandler<GetLoginStudentInput, GetLoginStudentMapper>
     {
@@ -23,7 +23,7 @@ namespace Ellp.Api.Application.UseCases.LoginUsers
             try
             {
                 var student = await _studentRepository.GetAllStudentInfosAsync(request.Email, request.Password);
-                if (student == null || student.Senha != request.Password)
+                if (student == null)
                 {
                     return new GetLoginStudentMapper { Success = false, Message = "Invalid email or password" };
                 }
@@ -36,6 +36,7 @@ namespace Ellp.Api.Application.UseCases.LoginUsers
                 return new GetLoginStudentMapper { Success = false, Message = "An error occurred" };
             }
         }
+
     }
 }
 

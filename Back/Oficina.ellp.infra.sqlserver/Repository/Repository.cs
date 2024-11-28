@@ -1,10 +1,7 @@
 ﻿using Ellp.Api.Application.Interfaces;
-using ellp.api.infra.sqlserver;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
-namespace Ellp.Api.Infra.SqlServer.Repositories
+namespace Ellp.Api.Infra.SqlServer.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {

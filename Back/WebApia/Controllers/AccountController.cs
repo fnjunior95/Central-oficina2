@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
-using Ellp.Api.Application.UseCases.LoginUsers;
 using MediatR;
-
+using Ellp.Api.Application.UseCases.GetLoginUseCases.GetLoginProfessor;
+using Ellp.Api.Application.UseCases.GetLoginUseCases.GetLoginStudent;
 
 namespace Ellp.Api.WebApi.Controllers
 {
@@ -23,7 +23,7 @@ namespace Ellp.Api.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetLoginStudentMapper))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Response))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Response))]
-        public async Task<IActionResult> GetLogin([Required][FromRoute] string email, [Required][FromRoute] string password, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetLoginStudent([Required][FromRoute] string email, [Required][FromRoute] string password, CancellationToken cancellationToken)
         {
             try
             {
@@ -46,26 +46,24 @@ namespace Ellp.Api.WebApi.Controllers
             }
         }
 
-        [HttpGet("login/professor/{email}/{password}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Response))]
+        [HttpGet("login/professor/{professorId}/{password}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetLoginProfessorMapper))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Response))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Response))]
-        public async Task<IActionResult> GetLoginProfessor([Required][FromRoute] string user, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetLoginProfessor([Required][FromRoute] int professorId, [Required][FromRoute] string password, CancellationToken cancellationToken)
         {
             try
             {
-                if (string.IsNullOrEmpty(user))
-                {
-                    return BadRequest(new Response { Message = "User is required" });
-                }
+                var input = new GetLoginProfessorInput { ProfessorId = professorId, Password = password };
+                var result = await _mediator.Send(input, cancellationToken);
 
-                if (user == "validUser")
+                if (result.Success)
                 {
-                    return Ok(new Response { Message = "Login successful" });
+                    return Ok(result);
                 }
                 else
                 {
-                    return BadRequest(new Response { Message = "Invalid user" });
+                    return BadRequest(new Response { Message = result.Message });
                 }
             }
             catch (Exception ex)
@@ -81,3 +79,4 @@ namespace Ellp.Api.WebApi.Controllers
         public string Message { get; set; }
     }
 }
+

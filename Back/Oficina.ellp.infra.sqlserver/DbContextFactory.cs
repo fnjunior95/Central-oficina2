@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ellp.api.domain.entities;
-using Ellp.api.infra.sqlserver.Configurations;
+using Ellp.Api.Domain.Entities;
+using Ellp.Api.Infra.SqlServer.Configurations;
 
-namespace ellp.api.infra.sqlserver
+namespace Ellp.Api.Infra.SqlServer
 {
     public class SqlServerDbContext : DbContext
     {
@@ -11,10 +11,10 @@ namespace ellp.api.infra.sqlserver
         {
         }
 
-        public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Aluno> Students { get; set; }
         public DbSet<Workshop> Workshops { get; set; }
-        public DbSet<Professor> Professores { get; set; }
-        public DbSet<WorkshopAluno> WorkshopAlunos { get; set; }
+        public DbSet<Professor> Professors { get; set; }
+        public DbSet<WorkshopAluno> WorkshopStudents { get; set; }
         public DbSet<WorkshopProfessor> WorkshopProfessors { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -27,3 +27,7 @@ namespace ellp.api.infra.sqlserver
         }
     }
 }
+
+
+
+

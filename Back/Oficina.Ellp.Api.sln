@@ -5,7 +5,7 @@ VisualStudioVersion = 17.12.35521.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ellp.api.Domain", "Ellp.api.Domain\Ellp.api.Domain.csproj", "{1881B336-540D-40AF-9D7E-2ED5F241ABBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ellp.api.infra.sqlserver", "Oficina.ellp.infra.sqlserver\Ellp.api.infra.sqlserver.csproj", "{F1F1F24D-1552-4B20-B891-4069C2B59F15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ellp.Api.Infra.SqlServer", "Oficina.ellp.infra.sqlserver\Ellp.Api.Infra.SqlServer.csproj", "{F1F1F24D-1552-4B20-B891-4069C2B59F15}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1881B336-540D-40AF-9D7E-2ED5F241ABBC} = {1881B336-540D-40AF-9D7E-2ED5F241ABBC}
 		{BBC67D14-07DE-4A23-A0B4-1AD08ADD9FEF} = {BBC67D14-07DE-4A23-A0B4-1AD08ADD9FEF}

@@ -1,19 +1,21 @@
 using System.Diagnostics;
-using ellp.api.infra.sqlserver;
 using Ellp.Api.Application.Interfaces;
-using Ellp.Api.Infra.SqlServer.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using MediatR;
+using Ellp.Api.Infra.SqlServer.Repository;
+using Ellp.Api.Infra.SqlServer;
+using Ellp.Api.Application.UseCases;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Carregar User Secrets em ambiente de desenvolvimento
+
 if (builder.Environment.IsDevelopment())
 {
     builder.Configuration.AddUserSecrets<Program>();
 }
 
-var isInContainer = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Docker";
+var isInContainer = builder.Environment.IsEnvironment("Docker");
 
 builder.WebHost.ConfigureKestrel(serverOptions =>
 {
@@ -27,36 +29,32 @@ builder.WebHost.ConfigureKestrel(serverOptions =>
     }
 });
 
-// Configurar serviços
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApplication5", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api Oficina 2", Version = "v1" });
 });
 
-// Utilizar a Connection String correta a partir dos User Secrets
+
 builder.Services.AddDbContext<SqlServerDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnectionString")));
 
-// Obter a Connection String para verificação (temporário)
-var dba = builder.Configuration.GetConnectionString("DbConnectionString");
 
-if (builder.Environment.IsDevelopment())
-{
-    // Temporariamente logar a Connection String (apenas para verificação)
-    Console.WriteLine($"Connection String: {dba}");
-}
-
-// Registro dos Repositórios
 builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
+builder.Services.AddScoped<IProfessorRepository, ProfessorRepository>();
 
-// Configuração de CORS
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(
+    typeof(Ellp.Api.Application.UseCases.GetLoginUseCases.GetLoginStudent.GetLoginStudentUseCase).Assembly,
+    typeof(Ellp.Api.Application.UseCases.GetLoginUseCases.GetLoginProfessor.GetLoginProfessorUseCase).Assembly
+));
+
+//Merda do cors
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowedOrigins", policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "https://seu-frontend.com")
+        policy.WithOrigins("https://localhost:7172")
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
@@ -64,15 +62,20 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Configurações do Middleware
-app.UseSwagger();
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApplication5 v1"));
 
-app.UseHttpsRedirection();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Oficina 2 v1"));
+}
+
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthorization();
 
-// Configurar middleware CORS antes de MapControllers
 app.UseCors("AllowedOrigins");
 
 app.MapControllers();
@@ -94,10 +97,11 @@ if (!isInContainer)
         }
         catch (Exception ex)
         {
-            // Opcional: Logar ou tratar a exceção conforme necessário
+
             Console.WriteLine($"Erro ao abrir o navegador: {ex.Message}");
         }
     });
 }
 
 app.Run();
+

@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ellp.api.domain.entities
+namespace Ellp.Api.Domain.Entities
 {
     public class WorkshopAluno
     {
         public int WorkshopId { get; set; }
         public Workshop Workshop { get; set; }
 
-        public int AlunoId { get; set; }
-        public Aluno Aluno { get; set; }
+        public int StudentId { get; set; }
+        public Aluno Student { get; set; }
     }
 }

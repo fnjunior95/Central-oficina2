@@ -1,6 +1,6 @@
-﻿using ellp.api.domain.entities;
+﻿using Ellp.Api.Domain.Entities;
 
-namespace Ellp.Api.Application.UseCases.LoginUsers
+namespace Ellp.Api.Application.UseCases.GetLoginUseCases.GetLoginStudent
 {
     public class GetLoginStudentMapper
     {

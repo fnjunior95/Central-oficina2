@@ -1,4 +1,4 @@
-﻿using ellp.api.domain.entities;
+﻿using Ellp.Api.Domain.Entities;
 using System.Threading.Tasks;
 using MediatR;
 
@@ -6,6 +6,6 @@ namespace Ellp.Api.Application.Interfaces
 {
     public interface IAlunoRepository : IRepository<Aluno>
     {
-        Task<Aluno> GetAllStudentInfosAsync(string email, string password);
+        Task<Aluno> GetAllStudentInfosAsync(string email, string senha);
     }
 }

@@ -1,32 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ellp.api.domain.entities;
+﻿using Ellp.Api.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Ellp.api.infra.sqlserver.Configurations
+namespace Ellp.Api.Infra.SqlServer.Configurations
 {
     public class ProfessorConfiguration : IEntityTypeConfiguration<Professor>
     {
         public void Configure(EntityTypeBuilder<Professor> builder)
         {
             builder.ToTable("Professor");
-            builder.HasKey(x => x.Id);
+            builder.HasKey(x => x.ProfessorId);
 
-            builder.Property(x => x.Nome)
+            builder.Property(x => x.ProfessorId)
+                .HasColumnName("Id")
+                .IsRequired();
+
+            builder.Property(x => x.Name)
                 .HasColumnName("Nome")
                 .IsRequired()
                 .HasMaxLength(255);
 
-            builder.Property(x => x.Especialidade)
+            builder.Property(x => x.Specialty)
                 .HasColumnName("Especialidade")
                 .IsRequired()
                 .HasMaxLength(255);
 
-            builder.Property(x => x.Senha)
+            builder.Property(x => x.Password)
                 .HasColumnName("Senha")
                 .IsRequired()
                 .HasMaxLength(255);
@@ -38,4 +37,7 @@ namespace Ellp.api.infra.sqlserver.Configurations
         }
     }
 }
+
+
+
 

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ellp.api.domain.entities;
+﻿using Ellp.Api.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Ellp.api.infra.sqlserver.Configurations
+namespace Ellp.Api.Infra.SqlServer.Configurations
 {
     public class WorkshopProfessorConfiguration : IEntityTypeConfiguration<WorkshopProfessor>
     {

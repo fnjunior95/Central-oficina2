@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ellp.api.domain.entities
+namespace Ellp.Api.Domain.Entities
 {
     public class Aluno
     {
         public int Id { get; set; }
         public string Email { get; set; }
-        public string Senha { get; set; }
+        public string Password { get; set; }
         public string Nome { get; set; }
-        public DateTime DataNascimento { get; set; }
+        public DateTime BirthDate { get; set; }
     }
 }

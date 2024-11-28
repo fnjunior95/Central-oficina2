@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using System;
 
-namespace ellp.api.infra.sqlserver
+namespace Ellp.Api.Infra.SqlServer
 {
     public class SqlServerDbContextFactory : IDbContextFactory<SqlServerDbContext>
     {
