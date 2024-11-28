@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>7981b231-1db0-4519-af89-161cea6df536</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="12.4.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ellp.api.application\Ellp.Api.Application.csproj" />
+		<ProjectReference Include="..\Oficina.ellp.infra.sqlserver\Ellp.api.infra.sqlserver.csproj" />
+	</ItemGroup>
+
+</Project>

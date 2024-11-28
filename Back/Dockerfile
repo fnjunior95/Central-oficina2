@@ -1,14 +1,21 @@
+# Estágio de build
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-COPY ./Entrypoint/WebApi/WebApi.csproj ./Entrypoint/WebApi/
-RUN dotnet restore ./Entrypoint/WebApi/WebApi.cspro
+# Copiar o arquivo de projeto e restaurar dependências
+COPY WebApplication5/WebApplication5.csproj ./WebApplication5/
+RUN dotnet restore ./WebApplication5/WebApplication5.csproj
 
-COPY ./ . 
-RUN dotnet publish ./Entrypoint/WebApi/WebApi.csproj -c Release -o /app/out
+# Copiar o restante do código e compilar a aplicação
+COPY WebApplication5/ ./WebApplication5/
+WORKDIR /app/WebApplication5
+RUN dotnet publish -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+# Estágio de runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
-COPY --from=build /app/out .
+COPY --from=build /app/WebApplication5/out ./
+ENTRYPOINT ["dotnet", "WebApplication5.dll"]
 
-ENTRYPOINT ["dotnet", "WebApi.dll"]
+# Expor a porta necessária
+EXPOSE 80
