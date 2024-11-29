@@ -18,7 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\AddParticipantUsecases\" />
+    <Folder Include="UseCases\AddParticipantUsecases\AddNewStudentUseCases\" />
+    <Folder Include="UseCases\AddWorkshopUseCases\" />
   </ItemGroup>
 
 </Project>

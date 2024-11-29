@@ -41,7 +41,7 @@ builder.Services.AddDbContext<SqlServerDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnectionString")));
 
 
-builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IProfessorRepository, ProfessorRepository>();
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(

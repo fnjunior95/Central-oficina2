@@ -9,6 +9,6 @@ namespace Ellp.Api.Domain.Entities
         public Workshop Workshop { get; set; }
 
         public int StudentId { get; set; }
-        public Aluno Student { get; set; }
+        public Student Student { get; set; }
     }
 }

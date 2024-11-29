@@ -19,15 +19,27 @@ namespace Ellp.Api.WebApi.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("login/student/{email}/{password}")]
+        [HttpGet("login/student")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetLoginStudentMapper))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Response))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Response))]
-        public async Task<IActionResult> GetLoginStudent([Required][FromRoute] string email, [Required][FromRoute] string password, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetLoginStudent(
+            [Required][FromQuery] string email,
+            [FromQuery] string? password = null, // Parâmetro opcional com valor padrão
+            CancellationToken cancellationToken = default) // Adicionado valor padrão
         {
             try
             {
-                var input = new GetLoginStudentInput { Email = email, Password = password };
+                GetLoginStudentInput input;
+                if (string.IsNullOrEmpty(password))
+                {
+                    input = new GetLoginStudentInput { Email = email };
+                }
+                else
+                {
+                    input = new GetLoginStudentInput { Email = email, Password = password };
+                }
+
                 var result = await _mediator.Send(input, cancellationToken);
 
                 if (result.Success)
@@ -50,7 +62,10 @@ namespace Ellp.Api.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetLoginProfessorMapper))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Response))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Response))]
-        public async Task<IActionResult> GetLoginProfessor([Required][FromRoute] int professorId, [Required][FromRoute] string password, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetLoginProfessor(
+            [Required][FromRoute] int professorId,
+            [Required][FromRoute] string password,
+            CancellationToken cancellationToken)
         {
             try
             {
@@ -79,4 +94,3 @@ namespace Ellp.Api.WebApi.Controllers
         public string Message { get; set; }
     }
 }
-

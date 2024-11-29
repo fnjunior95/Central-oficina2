@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Ellp.Api.Infra.SqlServer.Configurations
 {
-    public class AlunoConfiguration : IEntityTypeConfiguration<Aluno>
+    public class StudentConfiguration : IEntityTypeConfiguration<Student>
     {
-        public void Configure(EntityTypeBuilder<Aluno> builder)
+        public void Configure(EntityTypeBuilder<Student> builder)
         {
             builder.ToTable("Aluno");
             builder.HasKey(x => x.Id);
@@ -15,18 +15,29 @@ namespace Ellp.Api.Infra.SqlServer.Configurations
                 .HasColumnName("Email")
                 .IsRequired()
                 .HasMaxLength(100);
-
             builder.Property(x => x.Password)
-                .HasColumnName("Senha")
-                .IsRequired()
-                .HasMaxLength(100);
+             .HasColumnName("Senha")
+             .HasMaxLength(100)
+             .IsRequired(false);
 
             builder.Property(x => x.BirthDate)
                 .HasColumnName("DataNascimento")
                 .IsRequired();
 
-   
+            builder.Property(x => x.Name)
+             .HasColumnName("Nome")
+             .IsRequired()
+             .HasMaxLength(100);
 
+            builder.Property(x => x.IsAuthenticated)
+                .HasColumnName("Autenticado") 
+                .IsRequired();
         }
     }
 }
+
+
+
+
+
+

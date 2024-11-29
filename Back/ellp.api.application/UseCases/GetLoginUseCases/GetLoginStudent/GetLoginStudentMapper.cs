@@ -8,19 +8,30 @@ namespace Ellp.Api.Application.UseCases.GetLoginUseCases.GetLoginStudent
         public string Message { get; set; }
         public int StudentId { get; set; }
         public string Email { get; set; }
-        public string Nome { get; set; }
+        public string Name { get; set; }
 
-        public static GetLoginStudentMapper ToLoginOutput(Aluno aluno)
+        public static GetLoginStudentMapper ToLoginOutput(Student student)
         {
             return new GetLoginStudentMapper
             {
                 Success = true,
                 Message = "Login successful",
-                StudentId = aluno.Id,
-                Email = aluno.Email,
-                Nome = aluno.Nome
+                StudentId = student.Id,
+                Email = student.Email,
+                Name = student.Name
+            };
+        }
+        public static GetLoginStudentMapper ToLoginOutputIfInvalid(Student student)
+        {
+            return new GetLoginStudentMapper
+            {
+                Success = false,
+                Message = "Login Failed",
             };
         }
     }
 }
+
+
+
 
