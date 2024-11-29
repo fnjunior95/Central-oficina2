@@ -15,8 +15,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\ellp.api.application\Ellp.Api.Application.csproj" />
-		<ProjectReference Include="..\Ellp.api.Domain\Ellp.api.Domain.csproj" />
+	  <ProjectReference Include="..\ellp.api.application\Ellp.Api.Application.csproj" />
+	  <ProjectReference Include="..\Ellp.api.Domain\Ellp.Api.Domain.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -15,7 +15,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\ellp.api.application\Ellp.Api.Application.csproj" />
-		<ProjectReference Include="..\Oficina.ellp.infra.sqlserver\Ellp.Api.Infra.SqlServer.csproj" />
+		<ProjectReference Include="..\Ellp.Infra.SqlServer\Ellp.Api.Infra.SqlServer.csproj" />
 	</ItemGroup>
 
 </Project>

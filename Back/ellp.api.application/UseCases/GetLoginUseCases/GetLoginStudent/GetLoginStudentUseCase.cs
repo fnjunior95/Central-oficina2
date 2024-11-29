@@ -23,7 +23,6 @@ namespace Ellp.Api.Application.UseCases.GetLoginUseCases.GetLoginStudent
         {
             try
             {
-                // Primeiro, buscar o estudante pelo email
                 var student = await _studentRepository.GetStudentByEmailAsync(request.Email);
 
                 if (student == null)
@@ -37,7 +36,6 @@ namespace Ellp.Api.Application.UseCases.GetLoginUseCases.GetLoginStudent
 
                 if (student.IsAuthenticated)
                 {
-                    // Usuário autenticado: a senha é obrigatória
                     if (string.IsNullOrEmpty(request.Password))
                     {
                         return new GetLoginStudentMapper
@@ -46,8 +44,6 @@ namespace Ellp.Api.Application.UseCases.GetLoginUseCases.GetLoginStudent
                             Message = "Senha é obrigatória para login"
                         };
                     }
-
-                    // Verificar se a senha está correta
                     student = await _studentRepository.GetStudentByEmailAndPasswordAsync(request.Email, request.Password);
                     if (student == null)
                     {
@@ -57,13 +53,10 @@ namespace Ellp.Api.Application.UseCases.GetLoginUseCases.GetLoginStudent
                             Message = "Email ou senha inválidos"
                         };
                     }
-
-                    // Login bem-sucedido
                     return GetLoginStudentMapper.ToLoginOutput(student);
                 }
                 else
                 {
-                    // Usuário não autenticado: pode login sem senha
                     return GetLoginStudentMapper.ToLoginOutput(student);
                 }
             }
