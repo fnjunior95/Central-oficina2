@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
 COPY ./Back/Entrypoint/WebApi/WebApi.csproj ./Back/Entrypoint/WebApi/
-RUN dotnet restore ./Back/Entrypoint/WebApi/WebApi.cspro
+RUN dotnet restore ./Back/Entrypoint/WebApi/WebApi.csproj
 
 COPY ./ . 
 RUN dotnet publish ./Back/Entrypoint/WebApi/WebApi.csproj -c Release -o /app/out
