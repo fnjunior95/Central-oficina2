@@ -1,0 +1,47 @@
+name: Deploy to Azure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Build and Push Docker Image
+        run: |
+          az acr login --name centraloficina2acr
+          docker build -t centraloficina2acr.azurecr.io/centraloficina2:${{ github.sha }} .
+          docker push centraloficina2acr.azurecr.io/centraloficina2:${{ github.sha }}
+
+      - name: Deploy to Development
+        run: |
+          az webapp config container set \
+            --name CentralOficina2-Dev \
+            --resource-group CentralOficina2-Dev \
+            --docker-custom-image-name centraloficina2acr.azurecr.io/centraloficina2:${{ github.sha }}
+
+      - name: Deploy to Homologation
+        if: github.ref == 'refs/heads/main'
+        run: |
+          az webapp config container set \
+            --name CentralOficina2-Hml \
+            --resource-group CentralOficina2-Hml \
+            --docker-custom-image-name centraloficina2acr.azurecr.io/centraloficina2:${{ github.sha }}
+
+      - name: Deploy to Production
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          az webapp config container set \
+            --name CentralOficina2-Prod \
+            --resource-group CentralOficina2-Prod \
+            --docker-custom-image-name centraloficina2acr.azurecr.io/centraloficina2:${{ github.sha }}
